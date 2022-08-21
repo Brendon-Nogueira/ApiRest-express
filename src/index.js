@@ -14,7 +14,7 @@ app.post('courses', (req,res)=>{
     const {name, course, year} = req.body
     const curso = {name, course,year}
     courses.push(curso)
-    res.status(201).json(curso)
+    return res.status(201).json(curso)
 })
 
 
