@@ -2,7 +2,11 @@ const express = require('express')
 const moment = require('moment')
 
 // fake data base
-const schedule = []
+let schedule = {
+    'year' : 0,
+    'semester' : 0,
+    'days' : [1,2,3,4,5],
+}
 
 //app 
 const app = express()
@@ -12,21 +16,22 @@ app.use(express.json())
 app.post('/api/v1/classes', (req,res)=>{
     const {year, semester, days} = req.body
     const weekly = {year,semester,days}
-    schedule.push(weekly)
 
-// validando entradas, dias,semestre e ano
     if (weekly.days < 1 || weekly.days > 5){
         console.log('Valor de data incorreto')
         return res.status(400).end()
-    } else if (weekly.semester < 1 || weekly.semester > 2) {
+    } else if (weekly.semester !== 1 && weekly.semester !== 2) {
         console.log('Valor de semestre incorreto')
         return res.status(400).end()
+    } else {
+        schedule.push(weekly)
+        return res.status(201).json(weekly)
     }
-    
-    return res.status(201).json(weekly)
 })
 
-
+let makeData = () => {
+    
+}
 
 app.get('/api/v1/classes', (req, res) =>{
     const allDays = schedule
