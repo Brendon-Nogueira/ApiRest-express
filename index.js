@@ -37,4 +37,4 @@ app.get('/api/v1/classes', (req, res) =>{
 })
 
 //servidor rodando 
-app.listen(8080, ()=> console.log('Server funcionando'))
+app.listen(8080, ()=> console.log('Server funcionando na porta 8080'))
