@@ -10,7 +10,7 @@ const app = express
 
 app.use(express.json())
 
-app.post(`/${courses}`, (req,res)=>{
+app.post('courses', (req,res)=>{
     const {name, course, year} = req.body
     const curso = {name, course,year}
     courses.push(curso)
