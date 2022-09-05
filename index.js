@@ -1,6 +1,8 @@
 const express = require('express') 
 const moment = require('moment')
 
+const HOST = '0.0.0.0'
+
 
 //app 
 const app = express()
@@ -13,7 +15,7 @@ app.post('/api/v1/classes', (req,res)=>{
 })
 
 const checkingData = (data) =>{
-    const  {year, semster, days}
+    
 }
 
 
@@ -23,4 +25,4 @@ const checkingData = (data) =>{
 
 
 //servidor rodando 
-app.listen(8080, ()=> console.log('Server funcionando na porta 8080'))
+app.listen(8087, HOST, ()=> console.log('Server funcionando na porta 8080'))
