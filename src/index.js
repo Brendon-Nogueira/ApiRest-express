@@ -19,6 +19,7 @@ app.get('/api/v1/classes', (req, res) => {
 
 app.post('/api/v1/classes', (req, res) => {
     const postData = req.body
+    daysList = []
     const isValid = makeData(postData)
 
     res.send(daysList)
