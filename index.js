@@ -19,8 +19,16 @@ app.get('/api/v1/classes', (req, res) => {
 
 app.post('/api/v1/classes', (req, res) => {
     const postData = req.body
+    const isValid = makeData(postData)
+    console.log(postData)
+
     res.send("Data criada", daysList)
-    makeData(postData)
+    if(isValid.error){
+        res.status(400).send(isValid)
+    } else {
+        res.status(200).json(makeData)
+    }
+    
 })
 
 
