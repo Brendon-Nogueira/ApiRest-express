@@ -19,7 +19,7 @@ app.get('/api/v1/classes', (req, res) => {
 
 app.post('/api/v1/classes', (req, res) => {
     const postData = req.body
-    res.send("Data criada")
+    res.send("Data criada", daysList)
     makeData(postData)
 })
 
