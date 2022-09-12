@@ -81,3 +81,6 @@ function makeData(postData) {
         
     }     
 }
+
+//servidor rodando 
+app.listen(8087, HOST, () => console.log('Server funcionando na porta 8087'))
